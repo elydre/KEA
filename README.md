@@ -21,8 +21,8 @@ user@host: ~/dev$ 1, 0 >> and
 
 user@host: ~/dev$ 0 > $i
 user@host: ~/dev$ 5 > LOOP
-    $i + 1 > $i > print
-    END
+$i + 1 > $i > print
+END
  1
  2
  3
