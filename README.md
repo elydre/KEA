@@ -7,7 +7,7 @@ shell/cl with KS input
 - KEA interpreter
 
 ## previous work
-```sh
+```console
 user@host: ~/dev$ ls
  cpp/
  game.py
