@@ -15,12 +15,11 @@ for d in os.listdir("./ks_dep"):
 while True:
     code = []
     while not code or code[-1] != "":
-        code.append(input(">>> "))
+        code.append(input("KS $ "))
 
-    sortie = Decoupeur("\n".join(code), 0).start()
+    sortie = Decoupeur("\n".join(code), 0, 1).start()
 
     if sortie != 0:
         parsed = "\n".join([" ".join(k) for k in sortie])
-        print(f"\n{parsed}\n")
-
+        
         kea.start(parsed, 0)
