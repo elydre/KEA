@@ -1,0 +1,36 @@
+// dependance KEA 2022
+// bool.kea  -  pf4
+
+F not var1
+    V sortie 1
+    X t var1
+        V sortie 0
+        E t
+    E not sortie
+
+F or var1&var2
+    V sortie 0
+    X t1 var1
+        V sortie 1
+        E t1
+    X t2 var2
+        V sortie 1
+        E t2
+    E or sortie
+
+F and var1&var2
+    V sortie 1
+    T not var1 var1
+    T not var2 var2
+    X t1 var1
+        V sortie 0
+        E t1
+    X t2 var2
+        V sortie 0
+        E t2
+    E and sortie
+
+F nand var1&var2
+    T and var1&var2 var3
+    T not var3 sortie
+    E nand sortie

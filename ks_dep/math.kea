@@ -1,0 +1,23 @@
+// dependance KEA 2022
+// math.kea  -  pf4
+
+F square_root x
+    V 0.5 0.5
+    C x x ** 0.5
+    E square_root x
+
+F factorielle to
+    V 1 1
+    V exit 1
+    H i to
+    L loopto to
+        C exit exit * i
+        C i i - 1
+        E loopto
+    E factorielle exit
+
+F is_div var1&div
+    V 0 0
+    C exit var1 % div
+    B exit exit = 0
+    E is_div exit

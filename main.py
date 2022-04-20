@@ -1,45 +1,17 @@
 import kea.kea as kea
 from kstream.decoupeur import Decoupeur
+import os
 
-kea.start("""
-D on
+kea.start("D off")
 
-// dependance KEA 2022
-// uf.kea  -  pf4
+print("loading dependencies")
 
-F print var
-    A var
-    S
-    E print var
+for d in os.listdir("./ks_dep"):
+    with open(f"./ks_dep/{d}", "r") as f:
+        ks = f.read()
+    kea.start(ks, 0)
 
-F cout var
-    A var
-    E cout var
-
-F input var
-    A var
-    I sortie
-    E input sortie
-
-F random max
-    R sortie max
-    E random sortie
-
-F pass var
-    E pass var
-
-F debug_on
-    D on
-    E debug_on
-
-F debug_off
-    D off
-    E debug_off
-
-F debug_print
-    D print
-    E debug_print
-""")
+print("dependencies loaded")
 
 while True:
     code = input("KS $ ")
