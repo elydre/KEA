@@ -22,7 +22,8 @@ def isdown(var):
     return var == 0
 
 class StatusDisplay:
-    def __init__(self): ...
+    def __init__(self, discret = False):
+        self.discret = discret
 
     def colorprint(self, text, color):
         print(f"\033[{color}m{text}\033[0m")
@@ -32,16 +33,16 @@ class StatusDisplay:
         return 0
     
     def statuprint(self, etat: bool, nom):
-        if etat: self.colorprint(f"🟢 pass - {nom}", "32")
-        else: self.colorprint(f"🔴 fail - {nom}", "31")
+        if etat and not self.discret: self.colorprint(f"🟢 pass - {nom}", "32")
+        elif not etat: self.colorprint(f"🔴 fail - {nom}", "31")
         return etat
 
 class Decoupeur:
-    def __init__(self, code, debug=False):
+    def __init__(self, code, debug=False, discret=False):
         self.DEBUG_PRINT = bool(debug)
         self.active_mcn = [[],0] # nom des boucle / condition active
         self.brut = code
-        self.sd = StatusDisplay()
+        self.sd = StatusDisplay(discret)
     
     def start(self):
         self.brut = self.polissage(self.brut)
