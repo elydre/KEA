@@ -15,6 +15,8 @@
 --|~|--|~|--|~|--|~|--|~|--|~|--
 '''
 
+from random import randint
+
 version = "0.0.8"
 
 def debug_print(texte, blue = False):
@@ -249,7 +251,7 @@ def codeinloop(code, nom, max, fonc_name):  # sourcery no-metrics
                         debug_print_all()
                 
                 elif mode == "R":
-                    rand = rand(0, getvar(args[2], fonc_name))
+                    rand = randint(0, getvar(args[2], fonc_name))
                     setvar(args[1], rand, fonc_name)
                 
                 elif mode == "X":

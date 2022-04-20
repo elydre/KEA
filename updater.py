@@ -27,7 +27,7 @@ chem = "/"
 
 # relative path
 global PATH
-PATH = os.path.dirname(sys.argv[0])
+PATH = os.path.dirname(sys.argv[0]) if sys.platform == "win32" else "."
 
 lang = {
 "mkdir done":"folder {} successfully created",
