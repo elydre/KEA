@@ -129,11 +129,12 @@ class Decoupeur:
                     sortie, self.active_mcn = parse(e, i, is_pushed, self.active_mcn)
                     if isdown(sortie): return self.sd.statuprint(self.sd.error(self.active_mcn), "analyse")
                     local_analyse.extend(iter(sortie))
-                
+
                 is_pushed = True
             analysed.extend(local_analyse)
             analysed.append([])
-        analysed.pop()
+
+        if analysed: analysed.pop()
 
         if self.DEBUG_PRINT:
             print("\nAnalyse :")
