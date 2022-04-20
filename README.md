@@ -4,7 +4,7 @@ shell/cl with KS input
 ## using KS and KEA
 
 - [KEA stream](https://github.com/KEA-corp/KEA-stream)
-- KEA interpreter
+- [KEA interpreter](https://github.com/KEA-corp/simple-py)
 
 ## previous work
 ```console
