@@ -25,16 +25,16 @@ class StatusDisplay:
     def __init__(self, discret = False):
         self.discret = discret
 
-    def colorprint(self, text, color):
-        print(f"\033[{color}m{text}\033[0m")
+    def colorprint(self, text, color, end = "\n"):
+        print(f"\033[{color}m{text}\033[0m", end=end)
     
     def error(self, text):
         self.colorprint(text, "36")
         return 0
     
     def statuprint(self, etat: bool, nom):
-        if etat and not self.discret: self.colorprint(f"🟢 pass - {nom}", "32")
-        elif not etat: self.colorprint(f"🔴 fail - {nom}", "31")
+        if etat and not self.discret: self.colorprint(f"🟢 pass - {nom}", 32)
+        elif not etat: self.colorprint(f"🔴 fail - {nom}", 31)
         return etat
 
 class Decoupeur:
