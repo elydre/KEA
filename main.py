@@ -4,14 +4,13 @@ import os
 
 kea.start("D off")
 
-print("loading dependencies")
+print("loading dependencies...")
 
 for d in os.listdir("./ks_dep"):
     with open(f"./ks_dep/{d}", "r") as f:
         ks = f.read()
     kea.start(ks, 0)
-
-print("dependencies loaded")
+    print(f" - {d} loaded")
 
 while True:
     code = input("KS $ ")
