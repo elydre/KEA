@@ -1,5 +1,5 @@
 import kea.kea as kea
-from ks.decoupeur import Decoupeur
+from kstream.decoupeur import Decoupeur
 
 kea.start("""
 D on
