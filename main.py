@@ -13,8 +13,11 @@ for d in os.listdir("./ks_dep"):
     print(f" - {d} loaded")
 
 while True:
-    code = input("KS $ ")
-    sortie = Decoupeur(code, 0).start()
+    code = []
+    while not code or code[-1] != "":
+        code.append(input(">>> "))
+
+    sortie = Decoupeur("\n".join(code), 0).start()
 
     if sortie != 0:
         parsed = "\n".join([" ".join(k) for k in sortie])
