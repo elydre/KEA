@@ -8,19 +8,19 @@ shell/cl with KS input
 
 ## previous work
 ```console
-user@host: ~/dev$ ls
+KS $ ls
  cpp/
  game.py
  text.txt
 
-user@host: ~/dev$ cat text.txt, "20/01/2019" >> find
+KS $ cat text.txt, "20/01/2019" >> find
  20/01/2019: the dog is brown
 
-user@host: ~/dev$ 1, 0 >> and
+KS $ 1, 0 >> and
  0
 
-user@host: ~/dev$ 0 > $i
-user@host: ~/dev$ 5 > LOOP
+KS $ 0 > $i
+KS $ 5 > LOOP
 $    $i + 1 > $i > print
 $    END
  1
