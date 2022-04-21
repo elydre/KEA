@@ -7,7 +7,7 @@ shell/cl with KS input
 - [KEA interpreter](https://github.com/KEA-corp/simple-py)
 
 ## previous work
-```sh
+```dart
 KS $ ls
 cpp/
 game.py
