@@ -9,23 +9,23 @@ shell/cl with KS input
 ## previous work
 ```console
 KS $ ls
- cpp/
- game.py
- text.txt
+cpp/
+game.py
+text.txt
 
 KS $ cat text.txt, "20/01/2019" >> find
- 20/01/2019: the dog is brown
+20/01/2019: the dog is brown
 
 KS $ 1, 0 >> and
- 0
+0
 
 KS $ 0 > $i
 KS $ 5 > LOOP
-$    $i + 1 > $i > print
-$    END
- 1
- 2
- 3
- 4
- 5
+KS $    $i + 1 > $i > print
+KS $    END
+1
+2
+3
+4
+5
 ```
