@@ -1,7 +1,8 @@
+import os
+
 import kea.kea as kea
 import mod.tools as tools
 from kstream.decoupeur import Decoupeur, StatusDisplay
-import os
 
 ks_debug = 0
 
