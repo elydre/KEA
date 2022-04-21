@@ -46,7 +46,7 @@ def parse(e, i, is_pushed, ACTIVE_MCN): # sourcery no-metrics
     sortie = []
 
     def generate_func_args(e, i):
-        return "&".join([f"stream{j+i+(i if e[0] - e[1] > 1 and e[1] > 0 else 0)}" for j in range((e[0] // e[1]) if e[1] != 0 else 1)])
+        return "&".join([f"stream{j+i+(i if e[0] - e[1] > 1 and e[1] > 0 else 0)}" for j in range((e[0] // e[1]) if e[1] != 0 else 1 if e[0] > 0 else 0)])
 
     for c in split_string(str(e[2][i])):
 
