@@ -1,22 +1,15 @@
 # KS-shell
-shell/cl with KS input
+KEA-stream in simple shell
 
 ## using KS and KEA
 
 - [KEA stream](https://github.com/KEA-corp/KEA-stream)
 - [KEA interpreter](https://github.com/KEA-corp/simple-py)
 
-## previous work
+## example
+
 ```c
-KS $ ls
-cpp/
-game.py
-text.txt
-
-KS $ cat text.txt, "20/01/2019" >> find
-20/01/2019: the dog is brown
-
-KS $ 1, 0 >> and
+KS $ 1, 0 >> and > print
 0
 
 KS $ 0 > $i
