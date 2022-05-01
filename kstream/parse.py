@@ -85,7 +85,7 @@ def parse(e, i, is_pushed, ACTIVE_MCN): # sourcery no-metrics
             sortie.append(["V", Vstream, econt])
 
         elif etype == "var":
-            # soit [VAR > STREAM] (is_pushed == 0) soit [STREAM > VAR]
+            # soit [VAR > STREAM]: (is_pushed == 0) soit [STREAM > VAR]
             sortie.append(["H", Vstream, econt] if is_pushed == 0 else ["H", econt, Vstream])
 
         elif etype == "mc":
