@@ -1,5 +1,5 @@
 // dependance KEA 2022
-// math.kea  -  pf4
+// math.kea  -  elydre
 
 F square_root x
     V 0.5 0.5
