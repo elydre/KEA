@@ -1,0 +1,6 @@
+// bool
+True=1
+true=1
+
+False=0
+false=0
