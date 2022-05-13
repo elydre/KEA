@@ -5,12 +5,12 @@ import mod.tools as tools
 from kstream.decoupeur import Decoupeur, StatusDisplay
 
 # debug mode
-ks_debug = 0
+debug = 1
 alias_debug = 1
 
-cp = StatusDisplay(not ks_debug)
+cp = StatusDisplay(not debug)
 
-kea.start("D off")
+kea.start("D on" if debug else "D off")
 
 print("loading dependencies...")
 
@@ -35,11 +35,11 @@ while True:
     code = []
     while not code or code[-1] != "":
         cp.colorprint("KS", "37" if code else "36", end="")
-        code.append(input(" $ "))
+        code.append(input(" ~ "))
     
     tools.clear_last_line()
     
-    sortie = Decoupeur(alias("\n".join(code)), ks_debug, not ks_debug).start()
+    sortie = Decoupeur(alias("\n".join(code)), debug, not debug).start()
 
     if sortie != 0:
         parsed = "\n".join([" ".join(k) for k in sortie])
