@@ -5,8 +5,7 @@ import mod.tools as tools
 from kstream.decoupeur import Decoupeur, StatusDisplay
 
 # debug mode
-debug = 1
-alias_debug = 1
+debug = 0
 
 cp = StatusDisplay(not debug)
 
@@ -27,7 +26,7 @@ def alias(code):
         alias = e.split("=")
         if alias[0] in code:
             code = code.replace(alias[0], alias[1])
-            if not alias_debug: continue
+            if not debug: continue
             print(f" - {alias[0]} replaced by {alias[1]}")
     return code
 
