@@ -47,6 +47,7 @@ def alias(code):
         alias = e.split("=")
         if alias[0] in code:
             code = code.replace(alias[0], alias[1])
+            if debug: print(f" - {alias[0]} replaced by {alias[1]}")
 
     return code
 
