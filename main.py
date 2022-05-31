@@ -47,14 +47,14 @@ def alias(code):
         alias = e.split("=")
         if alias[0] in code:
             code = code.replace(alias[0], alias[1])
-            if debug: print(f" - {alias[0]} replaced by {alias[1]}")
+
     return code
 
 while not fmode:
     code = []
     while not code or code[-1] != "":
         cp.colorprint("KS", "37" if code else "36", end="")
-        code.append(input(" $ "))
+        code.append(input(" ~ "))
     
     tools.clear_last_line()
 
