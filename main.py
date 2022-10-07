@@ -7,10 +7,12 @@ import os
 from sys import argv
 
 ####
-def remove_strvide(liste):
-    while "" in liste:
-        liste.remove("")
-    return liste
+def remove_strvide(liste): # sourcery skip: inline-immediately-returned-variable, list-comprehension
+    new_liste = []
+    for element in liste:
+        if element != "":
+            new_liste.append(element)
+    return new_liste
 
 def split_string(text):
     # decouper la chaine de caractere en liste au espaces mais pas dans les quotes
