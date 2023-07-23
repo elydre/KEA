@@ -1,24 +1,25 @@
-# KS-shell
-KEA-stream in simple shell
+# KEA main repository
 
-## using KS and KEA
+<table>
+    <td>
+        <a href="https://elydre.github.io/kea">
+            <img src="https://elydre.github.io/kea/logo/kea.png" align="center">
+        </a>
+    </td>
+    <td>
+        <a href="https://elydre.github.io/kea/stream">
+            <img src="https://elydre.github.io/kea/logo/kea_stream.png" align="center">
+        </a>
+    </td>
+</table>
 
-- [KEA stream](https://github.com/KEA-corp/KEA-stream)
-- [KEA interpreter](https://github.com/KEA-corp/simple-py)
+All code around KEA has been moved to this repo.
 
-## example
+## Documentation
 
-```c
-KS $ 1, 0 >> and > print
-0
+- [main documentation](https://elydre.github.io/kea)
+- [esolang wiki](https://esolangs.org/wiki/KEA)
 
-KS $ 0 > $i
-KS $ 5 > LOOP
-KS $    $i + 1 > $i > print
-KS $    END
-1
-2
-3
-4
-5
-```
+## Other repositories
+
+- [ks2cpp](https://github.com/elydre/ks2cpp)
