@@ -36,7 +36,7 @@ class StatusDisplay:
 class Decoupeur:
     def __init__(self, code, debug=False, discret=False):
         self.DEBUG_PRINT = bool(debug)
-        self.active_mcn = [[],0] # nom des boucle / condition active
+        self.active_mcn = [[], 0] # nom des boucle / condition active
         self.brut = code
         self.sd = StatusDisplay(discret)
     
@@ -53,8 +53,7 @@ class Decoupeur:
             return text
 
         code = code.replace("\n", ";").replace("\t", " ").strip()
-        code = replace_while("  ", " ", code)
-        code = replace_while(";;", ";", code)
+        code = replace_while(";;", ";", replace_while("  ", " ", code))
 
         if self.DEBUG_PRINT:
             print(f"Polissage :\n| {code}")
@@ -67,12 +66,7 @@ class Decoupeur:
         analiser_codetemp = lambda code: [c.strip() for c in code.split(",")]
 
         for code in self.brut.split(";"):
-
-            exit_list = []
-            in_str = False
-            codetemp = ""
-            push = 0
-            oldpush = 0
+            exit_list, in_str, codetemp, push, oldpush = [], False, "", 0, 0
             for l in code:
                 if l != ">" or in_str:
                     codetemp += l
@@ -85,9 +79,8 @@ class Decoupeur:
                         push += 1
 
                     elif push > 0:
-                        exit_list.append([oldpush ,push, analiser_codetemp(codetemp)])
-                        oldpush, push = push, 0
-                        codetemp = ""
+                        exit_list.append([oldpush, push, analiser_codetemp(codetemp)])
+                        oldpush, push, codetemp = push, 0, ""
 
             exit_list.append([oldpush, push, analiser_codetemp(codetemp)])
             decouped.append(exit_list)
@@ -114,8 +107,7 @@ class Decoupeur:
             return self.sd.statuprint(0, "analyse")
         analysed = []
         for d in self.decouped:
-            local_analyse = []
-            is_pushed = False
+            local_analyse, is_pushed = [], False
 
             if d[0][2][0].startswith("#") or d[0][2][0].startswith("//"):
                 analysed.append([" =+ ".join([e[2][0] for e in d])])

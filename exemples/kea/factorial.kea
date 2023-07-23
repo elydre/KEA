@@ -1,0 +1,16 @@
+D on
+
+F factorielle to
+    V 1 1
+    V exit 1
+    H i to
+    L loopto to
+        C exit exit * i
+        C i i - 1
+        E loopto
+    E factorielle exit
+
+S factorielle_->_
+V to 100
+T factorielle to exit
+A exit

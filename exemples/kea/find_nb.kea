@@ -1,0 +1,35 @@
+V 100 100
+V max 100000
+
+F info
+    S trouvez_un_nombre_entre_0_et_100
+    E info
+
+R tofind 100
+T info
+
+L m max
+    S _>>_
+    I userval
+
+
+    B cond tofind > userval
+    X nons cond
+        S essayer_plus_grand
+        E nons
+
+
+    B cond tofind < userval
+    X noni cond
+        S essayer_plus_petit
+        E noni
+
+
+    B cond tofind = userval
+    X oui cond
+        S bravo!
+        S
+        R tofind 100
+        T info
+        E oui
+    E m

@@ -1,0 +1,16 @@
+D on
+S >>
+I table
+V i 0
+V 1 1
+V 10 10
+L bc 10
+    C i i + 1
+    A table
+    S x
+    A i
+    S =
+    C res table * i
+    A res
+    S
+    E bc

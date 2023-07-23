@@ -21,7 +21,7 @@ import os
 
 from sys import argv
 
-import kea.kea as kea
+import inter.inter as kea
 import mod.tools as tools
 from kstream.decoupeur import Decoupeur, StatusDisplay
 
@@ -34,8 +34,8 @@ kea.start(f"D {'on' if debug else 'off'}")
 
 print("loading dependencies...")
 
-for d in os.listdir("./ks_dep"):
-    ks = tools.read_file(f"./ks_dep/{d}")
+for d in os.listdir("./dependencies"):
+    ks = tools.read_file(f"./dependencies/{d}")
     kea.start(ks, 0)
     print(f" - {d} loaded")
 
