@@ -18,7 +18,7 @@ All code around KEA has been moved to this repo.
 ## Documentation
 
 - [main documentation](https://elydre.github.io/kea)
-- [esolang wiki](https://esolangs.org/wiki/KEA)
+- [esolang wiki](https://esolangs.org/wiki/KS)
 
 ## Other repositories
 
