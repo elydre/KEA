@@ -22,4 +22,4 @@ All code around KEA has been moved to this repo.
 
 ## Other repositories
 
-- [ks2cpp](https://github.com/elydre/ks2cpp)
+- [ks2c](https://github.com/elydre/ks2c)
